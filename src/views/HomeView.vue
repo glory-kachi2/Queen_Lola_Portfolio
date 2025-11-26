@@ -4,7 +4,7 @@ import About from '@/components/About.vue'
 import Gallery from '@/components/Gallery.vue'
 import Contact from '@/components/Contact.vue'
 import Footer from '@/components/Footer.vue'
-import VideoShowreel from '@/components/VideoShowReel.vue'
+import VideoShowreel from '@/components/VideoShowreel.vue'
 
 export default {
   components: {
