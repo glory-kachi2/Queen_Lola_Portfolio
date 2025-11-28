@@ -1,17 +1,30 @@
 <script setup>
+import { useRouter } from 'vue-router'
+
 const emit = defineEmits(['openBio'])
+const router = useRouter()
 
 const navItems = [
   { name: 'Bio', href: '#bio', action: 'openBio' },
-  { name: 'Video', href: '#video' },
-  { name: 'Photos', href: '#photos' },
-  { name: 'Contact', href: '#contact' },
+  { name: 'Video', href: '#video', action: 'navigateVideos' },
+  { name: 'Photos', href: '#photos', action: 'navigateGallery' },
+  { name: 'Contact', href: '#contact', action: 'scrollToContact' },
 ]
 
 const handleNavClick = (item, event) => {
+  event.preventDefault()
+
   if (item.action === 'openBio') {
-    event.preventDefault()
     emit('openBio')
+  } else if (item.action === 'navigateGallery') {
+    router.push({ name: 'gallery' })
+  } else if (item.action === 'navigateVideos') {
+    router.push({ name: 'gallery', hash: '#videos' })
+  } else if (item.action === 'scrollToContact') {
+    const contactSection = document.querySelector('#contact')
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
   }
 }
 </script>
@@ -24,7 +37,6 @@ const handleNavClick = (item, event) => {
         <div>
           <h1 class="text-xl md:text-2xl font-bold text-yellow-400">Balogun Jejelola</h1>
         </div>
-
         <!-- NAVIGATION LINKS -->
         <div class="flex items-center gap-6 lg:gap-8">
           <a

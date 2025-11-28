@@ -51,7 +51,7 @@ const parallaxOffset = () => scrollY.value * 0.2
             <h1 class="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold mb-8 leading-tight">
               Jejelola
             </h1>
-            <p class="text-base lg:text-lg text-gray-200">Actor / Performer / Model</p>
+            <p class="text-base lg:text-lg text-gray-200">Runway / Commercial Model</p>
           </div>
         </div>
 

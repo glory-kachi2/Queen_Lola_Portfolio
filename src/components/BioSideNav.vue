@@ -44,31 +44,17 @@ const bioData = {
     hairColor: 'Black (Currently faded blonde)',
     dress: 'S',
     bra: '34B',
-    languages: 'English, German',
+    languages: 'English: Fluent',
   },
   specialSkills: ['Tennis (Intermediate)', 'Singing', 'Swimming', 'Cooking'],
   theater: [
     { year: '2035', details: 'Play / Director / Theater / Role' },
     { year: '2035', details: 'Play / Director / Theater / Role' },
   ],
-  film: [
-    { year: '2035', details: 'Title / Director / Role' },
-    { year: '2035', details: 'Title / Director / Role' },
-    { year: '2035', details: 'Title / Director / Role' },
-  ],
-  tv: [
-    { year: '2035', details: 'Title / Director / Production House / Role' },
-    { year: '2035', details: 'Title / Director / Production House / Role' },
-  ],
   education: [
-    'Institution / Workshop Name / Instructor',
-    'Institution / Workshop Name / Instructor',
-    'Institution / Workshop Name / Instructor',
-  ],
-  awards: [
-    { year: '2035', description: 'Description' },
-    { year: '2035', description: 'Description' },
-    { year: '2035', description: 'Description' },
+    'National Diploma: Computer Science',
+    'Moshood Abiola Polytechnic, Abeokuta, Nigeria',
+    '2014 – 2016',
   ],
 }
 </script>
@@ -147,24 +133,12 @@ const bioData = {
               </ul>
             </section>
 
-            <!-- Film -->
+            <!-- Education-->
             <section class="mb-10">
-              <h2 class="text-2xl font-bold text-yellow-400 mb-4">Film</h2>
-              <div v-for="item in bioData.film" :key="item.details" class="mb-3">
-                <p>
-                  <strong>{{ item.year }}.</strong> {{ item.details }}
-                </p>
-              </div>
-            </section>
-
-            <!-- TV -->
-            <section class="mb-10">
-              <h2 class="text-2xl font-bold text-yellow-400 mb-4">TV</h2>
-              <div v-for="item in bioData.tv" :key="item.details" class="mb-3">
-                <p>
-                  <strong>{{ item.year }}.</strong> {{ item.details }}
-                </p>
-              </div>
+              <h2 class="text-2xl font-bold text-yellow-400 mb-4">Education & Training</h2>
+              <ul class="space-y-2">
+                <li v-for="edu in bioData.education" :key="edu">{{ edu }}</li>
+              </ul>
             </section>
           </div>
 
@@ -176,24 +150,6 @@ const bioData = {
               <div v-for="item in bioData.theater" :key="item.details" class="mb-3">
                 <p>
                   <strong>{{ item.year }}.</strong> {{ item.details }}
-                </p>
-              </div>
-            </section>
-
-            <!-- Education & Training -->
-            <section class="mb-10">
-              <h2 class="text-2xl font-bold text-yellow-400 mb-4">Education & Training</h2>
-              <ul class="space-y-2">
-                <li v-for="edu in bioData.education" :key="edu">{{ edu }}</li>
-              </ul>
-            </section>
-
-            <!-- Awards -->
-            <section class="mb-10">
-              <h2 class="text-2xl font-bold text-yellow-400 mb-4">Awards</h2>
-              <div v-for="award in bioData.awards" :key="award.description" class="mb-3">
-                <p>
-                  <strong>{{ award.year }}</strong> / {{ award.description }}
                 </p>
               </div>
             </section>

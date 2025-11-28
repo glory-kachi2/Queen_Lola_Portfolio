@@ -42,7 +42,7 @@ const socials = ref([
 </script>
 
 <template>
-  <div class="min-h-screen grid grid-cols-1 md:grid-cols-2 mt-40">
+  <div class="min-h-screen grid grid-cols-1 md:grid-cols-2 mt-40" id="contact">
     <!-- LEFT -->
     <div class="w-full h-full">
       <img :src="ModelImage" class="w-full h-full object-cover" />

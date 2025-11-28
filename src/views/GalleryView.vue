@@ -1,8 +1,10 @@
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
+import { useRoute } from 'vue-router'
 import Footer from '@/components/Footer.vue'
 import MainNavbar from '@/components/MainNavbar.vue'
 
+const route = useRoute()
 const activeCategory = ref('All')
 
 const categories = ['All', 'Bikini', 'Jewelry', 'Bag', 'Runway', 'Sport', 'Studio Shoot', 'Videos']
@@ -32,6 +34,10 @@ const studioImages = import.meta.glob('@/assets/images/studio/*.{jpg,jpeg,png,we
   eager: true,
   import: 'default',
 })
+const generalImages = import.meta.glob('@/assets/images/general/*.{jpg,jpeg,png,webp}', {
+  eager: true,
+  import: 'default',
+})
 
 // Import all videos
 const videos = import.meta.glob('@/assets/videos/*.{mp4,webm}', { eager: true, import: 'default' })
@@ -58,6 +64,8 @@ const galleryItems = [
   ...createGalleryItems(sportImages, 'Sport'),
   ...createGalleryItems(studioImages, 'Studio Shoot'),
   ...createGalleryItems(videos, 'Videos', true),
+  // General images are included in All but don't have their own category
+  ...createGalleryItems(generalImages, 'All'),
 ]
 
 const filteredItems = computed(() => {
@@ -74,6 +82,20 @@ const setCategory = (category) => {
 // Check if current category should use masonry layout
 const useMasonryLayout = computed(() => {
   return activeCategory.value === 'Jewelry'
+})
+
+// Handle navigation from home page
+onMounted(() => {
+  // Check if there's a hash in the route (e.g., #videos)
+  if (route.hash) {
+    const categoryFromHash = route.hash.replace('#', '')
+    const categoryName = categoryFromHash.charAt(0).toUpperCase() + categoryFromHash.slice(1)
+
+    // Check if it's a valid category
+    if (categories.includes(categoryName)) {
+      activeCategory.value = categoryName
+    }
+  }
 })
 </script>
 
@@ -168,12 +190,7 @@ const useMasonryLayout = computed(() => {
           <!-- Overlay with Title -->
           <div
             class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end"
-          >
-            <!-- <div class="p-4 text-white w-full">
-              <p class="text-xs uppercase tracking-wider text-teal-400 mb-1">{{ item.category }}</p>
-              <h3 class="text-base font-semibold">{{ item.title }}</h3>
-            </div> -->
-          </div>
+          ></div>
         </div>
       </div>
 
