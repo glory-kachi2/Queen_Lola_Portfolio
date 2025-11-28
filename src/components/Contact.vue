@@ -1,10 +1,10 @@
 <script setup>
 import { ref } from 'vue'
-import ModelImage from '@/assets/images/model-leaning-on-court.jpg'
-import Twitter from '@/assets/icons/twitter.png'
-import Instagram from '@/assets/icons/instagram.png'
-import Facebook from '@/assets/icons/facebook.png'
-import Youtube from '@/assets/icons/youtube.png'
+import ModelImage from '@/assets/images/studio/studio.jpg'
+import Twitter from '@/assets/icons/svg/twitter-logo-svgrepo-com.svg'
+import Instagram from '@/assets/icons/svg/instagram-svgrepo-com.svg'
+import Facebook from '@/assets/icons/facebook-logo-white.png'
+import Youtube from '@/assets/icons/youtube-logo-white.png'
 
 const title = ref('Contact')
 const subtitle = ref('Representation')

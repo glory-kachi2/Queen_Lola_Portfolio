@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
-import modelImg from '@/assets/images/model_on_scarf.jpg'
+import modelImg from '@/assets/images/sport/model_on_scarf.jpg'
 import Navbar from './Navbar.vue'
 import BioSideNav from './BioSideNav.vue'
 

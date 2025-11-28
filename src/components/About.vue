@@ -64,7 +64,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import igLogo from '@/assets/icons/instagram.png'
+import igLogo from '@/assets/icons/instagram-logo.png'
 import faceBookLogo from '@/assets/icons/facebook.png'
 import twitterLogo from '@/assets/icons/twitter.png'
 import youTubeLogo from '@/assets/icons/youtube.png'
