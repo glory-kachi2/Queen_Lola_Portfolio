@@ -97,7 +97,7 @@ const socialLinks = ref([
 ])
 
 const viewResume = () => {
-  alert('View Full Resume clicked!')
+  window.open('Jejelole_Balogun_CV.pdf', '_blank')
 }
 </script>
 

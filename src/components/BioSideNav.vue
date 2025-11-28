@@ -14,6 +14,13 @@ const closeSideNav = () => {
   emit('close')
 }
 
+const downloadResume = () => {
+  const link = document.createElement('a')
+  link.href = '/Jejelole_Balogun_CV.pdf' // or imported PDF path
+  link.download = 'Jejelole_Balogun_CV.pdf'
+  link.click()
+}
+
 // Lock/unlock body scroll when side nav opens/closes
 watch(
   () => props.isOpen,
@@ -115,11 +122,6 @@ const bioData = {
 
         <!-- IMDb Button & Download -->
         <div class="flex items-center gap-4 mb-8 pb-8 border-b border-teal-600">
-          <button
-            class="border-2 border-white px-6 py-2 hover:bg-white hover:text-teal-800 transition-all duration-300 font-bold"
-          >
-            IMDb
-          </button>
           <a href="#" class="flex items-center gap-2 hover:text-yellow-400 transition-colors">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
@@ -129,7 +131,7 @@ const bioData = {
                 d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
               />
             </svg>
-            <span class="underline">Download Resume</span>
+            <button @click="downloadResume">Download Resume</button>
           </a>
         </div>
 

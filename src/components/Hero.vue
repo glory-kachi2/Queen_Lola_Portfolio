@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
-import modelImg from '@/assets/images/sport/model_on_scarf.jpg'
+import modelImg from '@/assets/images/studio/studio10.jpg'
 import Navbar from './Navbar.vue'
 import BioSideNav from './BioSideNav.vue'
 
@@ -62,7 +62,7 @@ const parallaxOffset = () => scrollY.value * 0.2
             :style="{
               backgroundImage: `url(${modelImg})`,
               backgroundSize: 'cover',
-              backgroundPosition: 'center',
+              backgroundPosition: 'top center',
               backgroundRepeat: 'no-repeat',
               transform: `translateY(${parallaxOffset()}px)`,
               transition: 'transform 0.1s ease-out',
