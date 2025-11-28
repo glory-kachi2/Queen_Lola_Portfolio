@@ -73,20 +73,11 @@ const title = ref('About Me')
 const buttonText = ref('View Full Resume')
 
 const paragraph1 = ref(
-  `I'm a paragraph. Click here to add your own text and edit me. It's easy. 
-  Just click "Edit Text" or double click me to add your own content and make 
-  changes to the font. Feel free to drag and drop me anywhere you like on 
-  your page. I'm a great place for you to tell a story and let your users 
-  know a little more about you.`,
+  `I am a friendly, hardworking, and dedicated model with excellent communication skills that help me connect effortlessly with clients, colleagues, and creative teams. With a naturally warm personality and a professional approach, I am able to adapt quickly to different environments, making collaboration smooth and enjoyable for everyone involved.`,
 )
 
 const paragraph2 = ref(
-  `This is a great space to write a long text about your company and your services. 
-  You can use this space to go into a little more detail about your company. 
-  Talk about your team and what services you provide. Tell your visitors the 
-  story of how you came up with the idea for your business and what makes 
-  you different from your competitors. Make your company stand out and 
-  show your visitors who you are.`,
+  `Over the years, I have built a strong reputation for being reliable, detail-oriented, and a fast learner. Whether on set, backstage, or during brand engagements, I consistently maintain positive working relationships and uphold the highest level of professionalism. My interpersonal skills and strong sense of responsibility allow me to excel in every role I take on, and I am always committed to delivering exceptional results for every project.`,
 )
 
 const socialLinks = ref([
